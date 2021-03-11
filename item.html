@@ -19,19 +19,25 @@
             width: 100vw;
             background-image: url(/images/wrapper.jpg);
             background-size: 100% 100%;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
         }
 
         div.board {
             margin-top: 1.5%;
             height: 95vh;
             width: 95vw; 
+            border-radius: 25px;
             background-color: #09d3a0a2;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
         }   
 
         div.row {
             position: relative;
             display: flex;
             background-color: #053f31a2;
+            border-bottom-left-radius: 25px;
             height: 88.4%;
             width: 50%;
         }
@@ -41,24 +47,25 @@
             height: 120px;
             width: 100%;
             background-color: #00a2d386;
+            border-top-right-radius: 25px;
+            border-top-left-radius: 25px;
             z-index: 0;
         }
 
         div.cart {
             float: right;
+            height: 100px;
+            width: 100px;
+            border-radius: 25px;
             margin-top: 12.5px;
             margin-right: 12.5px;
             background-color: red;
             z-index: 0;
         }
 
-        div.carthover {
-            position: relative;
-            background-image: url(/images/cartitem.jpg);
-            background-size: 50px;
-            background-position: 100% 100%;
-            background-repeat: no-repeat;
-            z-index: 1;
+        p#number_of_items {
+            text-align: center;
+            font-size: 70px;
         }
 
         img.cart1 {
@@ -108,10 +115,14 @@
             text-transform: uppercase;
             cursor: pointer;
             transition: 1s;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
         }
 
         button:hover {
             background-color: rgb(6, 127, 175);
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
         }
 
     </style>
@@ -121,7 +132,7 @@
         <div class="board">
             <div class="menu">
                 <div class="cart">
-                    <img class="cart1" src="/images/cart.webp" alt="">
+                    <p id="number_of_items">0</p>
                 </div>
             </div>
             <div class="row">
@@ -138,12 +149,12 @@
     </div>
     <script>
         const btn = document.querySelector("button");
-        const oneitem = document.querySelector("div.cart");
+        const oneitem = document.getElementById("number_of_items");
+        let number_of_item = 0;
 
         btn.addEventListener("click", () => {
-            const oneitem = document.querySelector("div.cart");
-            oneitem.classList.toggle("carthover");
-            console.log("klik");
+            oneitem.textContent = number_of_item + 1;
+            console.log("number of items" +  " " + number_of_item++);
         })
     </script>
 </body>
