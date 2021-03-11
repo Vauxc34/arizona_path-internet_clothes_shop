@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arizona_path</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        div.wrapper {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            background-image: url(/images/wrapper.jpg);
+            background-size: 100% 100%;
+        }
+
+        div.board {
+            margin-top: 1.5%;
+            height: 95vh;
+            width: 95vw; 
+            background-color: #09d3a0a2;
+        }   
+
+        div.row {
+            position: relative;
+            display: flex;
+            background-color: #053f31a2;
+            height: 88.4%;
+            width: 50%;
+        }
+
+        div.menu {
+            position: relative;
+            height: 120px;
+            width: 100%;
+            background-color: #00a2d386;
+            z-index: 0;
+        }
+
+        div.cart {
+            float: right;
+            margin-top: 12.5px;
+            margin-right: 12.5px;
+            background-color: red;
+            z-index: 0;
+        }
+
+        div.carthover {
+            position: relative;
+            background-image: url(/images/cartitem.jpg);
+            background-size: 50px;
+            background-position: 100% 100%;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+
+        img.cart1 {
+            height: 120px;
+            width: 120px;
+        }
+
+        div.item {
+            align-items: stretch;
+            margin-top: 60px;
+            margin-left: 55px;
+            height: 800px;
+            width: 800px;
+            background-color: rgba(3, 219, 219, 0.24);
+        }
+
+        img.t-shirt {
+            align-items: stretch;
+            margin-top: 10vh;
+            margin-left: 17%;
+            height: 600px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.87);
+        }
+
+        span.description {
+            position: absolute;
+            top: 195px;
+            right: 200px;
+            display: block;
+            height: 650px;
+            width: 600px;
+            background-color: rgba(10, 142, 175, 0.425);
+            text-align: center;
+            font-size: 30px;
+        }
+
+        button {
+            position: absolute;
+            left: 65%;
+            bottom: 100px;
+            height: 100px;
+            width: 350px;
+            border-radius: 50px 50px;
+            border: none;
+            font-size: 45px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 1s;
+        }
+
+        button:hover {
+            background-color: rgb(6, 127, 175);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="board">
+            <div class="menu">
+                <div class="cart">
+                    <img class="cart1" src="/images/cart.webp" alt="">
+                </div>
+            </div>
+            <div class="row">
+            <div class="item"><img class="t-shirt" src="/images/t-shirt.png" alt="t-shirt"></div>
+        </div>
+        
+            <span class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Sed, obcaecati? Dolor, laboriosam ipsa voluptates praesentium eius, voluptatum re
+                pellat doloribus accusamus a cum asperiores commodi explicabo alias repellendus dolores illo id.
+            </span>
+            <button>kup teraz</button>
+        
+    </div>
+    <script>
+        const btn = document.querySelector("button");
+        const oneitem = document.querySelector("div.cart");
+
+        btn.addEventListener("click", () => {
+            const oneitem = document.querySelector("div.cart");
+            oneitem.classList.toggle("carthover");
+            console.log("klik");
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+div.wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url(/images/wrapper.jpg);
+  background-repeat: no-repeat;
+  background-size: 120% 100%;
+}
+
+div.board {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  height: 95vh;
+  width: 95vw;
+  left: 2.5%;
+  background-color: #09d3a0a2;
+}
+
+span.Menu {
+  position: absolute;
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 120px;
+  width: 95vw;
+  background-color: #00a2d386;
+}
+
+span.Menu span.li1 {
+  margin-top: 35px;
+  display: block;
+  height: 50px;
+  width: 45vw;
+  font-size: 40px;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+span.Menu span.li2 {
+  margin-top: 35px;
+  display: block;
+  height: 50px;
+  width: 45vw;
+  font-size: 40px;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+span.Menu span.li1:hover {
+  background-color: aquamarine;
+}
+
+span.Menu span.li2:hover {
+  background-color: aquamarine;
+}
+
+span.item1 {
+  position: relative;
+  display: block;
+  top: 150px;
+  height: 550px;
+  width: 400px;
+  margin: 40px;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+span.item1 img {
+  position: absolute;
+  display: block;
+  top: 5%;
+  left: 10%;
+  height: 320px;
+  width: 300px;
+}
+
+span.item1 div.bought {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 200px;
+  background-color: purple;
+}
+
+span.item2 {
+  position: relative;
+  display: block;
+  top: 150px;
+  height: 550px;
+  width: 400px;
+  margin: 40px;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+span.item2 img {
+  position: absolute;
+  display: block;
+  top: 5%;
+  left: 10%;
+  height: 320px;
+  width: 300px;
+}
+
+span.item2 div.bought2 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 200px;
+  background-color: purple;
+}
+
+span.item3 {
+  position: relative;
+  display: block;
+  top: 150px;
+  height: 550px;
+  width: 400px;
+  margin: 40px;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+span.item3 img {
+  position: absolute;
+  display: block;
+  top: 5%;
+  left: 10%;
+  height: 320px;
+  width: 300px;
+}
+
+span.item3 div.bought3 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 200px;
+  background-color: purple;
+}
+
+span.item4 {
+  position: relative;
+  display: block;
+  float: right;
+  top: 150px;
+  height: 550px;
+  width: 400px;
+  margin: 40px;
+  background-color: white;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+span.item4 img {
+  position: absolute;
+  display: block;
+  top: 5%;
+  left: 10%;
+  height: 320px;
+  width: 300px;
+}
+
+span.item4 div.bought4 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 200px;
+  background-color: purple;
+}
+
+span.item1:hover {
+  background-color: aquamarine;
+}
+
+span.item2:hover {
+  background-color: aquamarine;
+}
+
+span.item3:hover {
+  background-color: aquamarine;
+}
+
+span.item4:hover {
+  background-color: aquamarine;
+}
+
+div.logo {
+  position: relative;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
+  top: 800px;
+  left: 2.5%;
+  height: 200px;
+  width: 95vw;
+  background-image: url(/images/logo.png);
+  background-position: center;
+  background-size: 40% 60%;
+  background-repeat: no-repeat;
+}
+
+div.cursor {
+  position: fixed;
+  height: 60px;
+  width: 60px;
+  background-image: url(/images/cursor.jpg);
+}
+/*# sourceMappingURL=main.css.map */
