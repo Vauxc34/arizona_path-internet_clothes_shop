@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="styles/mobile_main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300&family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Shippori+Mincho+B1:wght@500&display=swap" rel="stylesheet">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+            max-height: 100vh;
+            max-width: 100vw;
+            background-image: url(/images/wrapper.jpg);
+            background-size: 100% 100%;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+        } 
+
+        .board {
+            display: flex;
+            position: relative;
+            align-self: center;
+            height: 92.5vh;
+            width: 95vw; 
+            border-radius: 25px;
+            background-color: #005e2f4b;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
+        }
+
+        .row1 {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            height: 100%;
+            width: 50%;
+            background-color: #053f31a2;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+
+        .back_toItem {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            height: 120px;
+            border-top-left-radius:25px;
+            background-color: #00d37b86;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            width: 100%;
+        }
+
+        #free_c00kies {
+            position: absolute;
+            top: 30%;
+            display: block;
+            height: 50px;
+            width: 40vw;
+            font-size: 25px;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            transition: 1s;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+        }
+
+        #free_c00kies:hover {
+        background-color: aquamarine;
+        -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
+        box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
+        }
+
+        div.c00kie {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            height: 50px;
+            width: 50px;
+            background-color: #00a79e;
+            border-radius: 25px;
+            top: 25%;
+            height: 10%;
+            width: 40%;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            z-index: 5;
+        }
+
+        #back {
+            position: absolute;
+            top: 30%;
+            display: block;
+            height: 50px;
+            width: 40vw;
+            font-size: 25px;
+            border: none;
+            border-radius: 25px;
+            font-family: 'Cairo', sans-serif;
+            text-align: center;
+            background-color: white;
+            cursor: pointer;
+            transition: 1s;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+        }
+
+        .free_cookies {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 0px;
+            height: 120px;
+            border-bottom-left-radius:25px;
+            background-color: #00d37b86;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            width: 100%;
+           
+        }
+
+        #c00 {
+            align-self: center;
+            text-transform: uppercase;
+            font-size: 40px;
+        }
+
+        #back:hover {
+        background-color: aquamarine;
+        -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
+        box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
+        }
+
+        p {
+            display: block;
+            align-self: center;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+        }
+
+        .row2 {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            height: 100%;
+            width: 50%;
+            background-color: #053f31a2;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        form {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            height: 85%;
+            width: 80%;
+            border-radius: 25px;
+            background-color: #00a79e;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            top: 10%;
+        }
+
+        ::placeholder {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        input {
+           border: none;
+           border-radius: 25px;
+           height: 10%;
+           width: 80%;
+           text-align: center;
+           font-size: 20px;
+           -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+        }
+
+        #name {
+            position: absolute;
+            top: 40px;
+        }
+
+        #username {
+            position: absolute;
+            top: 130px;
+        }
+        
+        #address {
+            position: absolute;
+            top: 220px;
+        }
+
+        #postal-Code {
+            position: absolute;
+            top: 310px;
+        }
+        
+        #Paypal {
+            position: absolute;
+            top: 400px;
+        }
+
+        #checkout {
+            position: absolute;
+            top: 500px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <div class="board">
+        <div class="row1">
+
+            <div class="back_toItem">
+                <button id="back">Back to shop</button>
+            </div>
+
+            <p id="info_about_your_item">Your shopping cart is empty - buy something</p>
+
+            <!--<div class="c00kie"><span id="c00">cookie</span></div>-->    
+
+            <div class="free_cookies">
+               <button id="free_c00kies">Get free cookie</button> 
+            </div>
+
+        </div>
+        <div class="row2">
+            <form action="">
+                <input type="text" id="name" placeholder="name">
+                <input type="text" id="username" placeholder="username">
+                <input type="text" id="address" placeholder="address">
+                <input type="text" id="postal-Code" placeholder="postal-code">
+                <input type="text" id="Paypal" placeholder="paypal">
+                <input type="button" value="CHECKOUT" id="checkout">
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+
+        /* back to main site */
+
+        const back_btn = document.getElementById("back")
+
+        back_btn.addEventListener("click", () => {
+            location.href = "index.html"
+        })
+
+        /* */
+
+        /* get free cookie */
+
+        const cookies_btn = document.getElementById("free_c00kies")
+        const paragraph_about_your_item = document.getElementById("info_about_your_item")
+
+        cookies_btn.addEventListener("click", () => {
+
+            paragraph_about_your_item.style.opacity = 0
+            
+            const cookie = document.createElement("div")
+            cookie.className ="C00kie"
+            document.body.appendChild(cookie)
+
+            cookie.style.position = "fixed"
+            cookie.style.justifyContent = "center"
+            cookie.style.textAlign = "center"
+            cookie.style.top = "25%"
+            cookie.style.height = "10%"
+            cookie.style.width = "40%"
+            cookie.style.borderRadius = "25px"
+            cookie.style.zIndex = "15"
+
+            /* cookie style 
+
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            background-color: #00a79e;
+            border-radius: 25px;
+            top: 25%;
+            height: 10%;
+            width: 40%;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            z-index: 5;
+
+            */
+
+
+
+        })
+
+
+
+    </script>
+</body>
+</html>
