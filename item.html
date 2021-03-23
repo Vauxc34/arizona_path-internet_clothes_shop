@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>arizona_path</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mobile_main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300&family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Shippori+Mincho+B1:wght@500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,6 +26,7 @@
             justify-content: center;
             height: 100vh;
             max-width: 100vw;
+            max-height: 100vh;
             background-image: url(/images/wrapper.jpg);
             background-size: 100% 100%;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
@@ -25,15 +34,25 @@
         }
 
         div.board {
+            display: flex;
             position: relative;
-            align-self: center;
-            height: 95vh;
+            align-self: flex-start;
+            height: 92.5vh;
             width: 95vw; 
             border-radius: 25px;
             background-color: #09d3a0a2;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
             box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
         }   
+
+        h1 {
+            position: absolute;
+            top: 10%;
+            left: 1.5%;
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 80px;
+        }
 
         div.row {
             position: relative;
@@ -109,7 +128,7 @@
             top: 100%;
             height: 70vh;
             width: 50%;
-            background-color: rgba(10, 142, 175, 0.425);
+            background-color: #0a8eaf6c;
             font-size: 30px;
         }
 
@@ -117,16 +136,18 @@
             position: absolute;
             display: block;
             text-align: center;
-            height: 90%;
+            height: 80%;
             width: 80%;
             font-size: 50px;
             background-color: #00a79e;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
         }
 
         button {
             position: relative;
             align-self: center;
-            top: 32.5%;
+            top: 25%;
             height: 100px;
             width: 350px;
             border-radius: 50px 50px;
@@ -146,11 +167,13 @@
         }
 
     </style>
+    
 </head>
 <body>
     <div class="wrapper">
         <div class="board">
             <div class="menu">
+                <h1>swello t-shirt</h1>
                 <div class="cart">
                 <p id="number_of_items">0</p>
             </div>
