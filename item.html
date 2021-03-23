@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Shippori+Mincho+B1:wght@500&display=swap" rel="stylesheet">
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -40,7 +41,7 @@
             height: 92.5vh;
             width: 95vw; 
             border-radius: 25px;
-            background-color: #09d3a0a2;
+            background-color: #005e2f4b;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
             box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
         }   
@@ -61,7 +62,8 @@
             align-self: center;
             top: 100%;
             background-color: #053f31a2;
-
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
             height: 70vh;
             width: 50%;
         }
@@ -70,12 +72,12 @@
             position: absolute;
             height: 120px;
             width: 100%;
-            background-color: #00a2d386;
+            background-color: #00d37b86;
             border-top-right-radius: 25px;
             border-top-left-radius: 25px;
         }
 
-        div.cart {
+        div#cart {
             display: flex;
             position: relative;
             justify-content: center;
@@ -88,6 +90,12 @@
             background-color: #ffffffab;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
             box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
+            transition: 1s;
+        }
+
+        #cart:hover {
+            background-color: aquamarine;
+            cursor: pointer;
         }
 
         p#number_of_items {
@@ -103,10 +111,12 @@
             align-self: center;
             height: 90%;
             width: 90%;
-            background-color: #03dbdb3d;
+            background-color: #ffffff50;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
             box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 8px 2px #000000;
         }
+
+
 
         img.t-shirt {
             position: relative;
@@ -128,18 +138,22 @@
             top: 100%;
             height: 70vh;
             width: 50%;
-            background-color: #0a8eaf6c;
+            background-color: #005e2f4b;
+            -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
+            box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
             font-size: 30px;
         }
 
         .desc {
             position: absolute;
             display: block;
+            text-transform: uppercase;
             text-align: center;
             height: 80%;
             width: 80%;
-            font-size: 50px;
+            font-size: 38px;
             background-color: #00a79e;
+            border-radius: 25px;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
             box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), 0px 0px 25px 3px #000000;
         }
@@ -161,7 +175,7 @@
         }
 
         button:hover {
-            background-color: rgb(6, 127, 175);
+            background-color: aquamarine;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
             box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 3px 2px rgba(0,0,0,0.6);
         }
@@ -174,7 +188,7 @@
         <div class="board">
             <div class="menu">
                 <h1>swello t-shirt</h1>
-                <div class="cart">
+                <div id="cart">
                 <p id="number_of_items">0</p>
             </div>
             <div class="row">
@@ -185,13 +199,14 @@
 
             <div class="description">
                 <span class="desc">
-                    SWELLO T-SHIRT - 100% cotton, designed in Poland and created in China.</span>
+                    100% cotton, designed in Poland and created in China.</span>
                     <button>kup teraz</button>
             </div>
     </div>
     <script>
         const btn = document.querySelector("button");
         const oneitem = document.getElementById("number_of_items");
+        const shopping_cart = document.getElementById("cart")
         let number_of_item = 0;
 
         btn.addEventListener("click", () => {
@@ -204,6 +219,11 @@
                 oneitem.style.fontSize = "25px"
             }
         })
+
+        shopping_cart.addEventListener("click", () => {
+            location.href = "https://www.degenerat.pl"
+        })
+
     </script>
 </body>
 </html>
