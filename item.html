@@ -13,10 +13,11 @@
         }
 
         div.wrapper {
+            position: relative;
             display: flex;
             justify-content: center;
             height: 100vh;
-            width: 100vw;
+            max-width: 100vw;
             background-image: url(/images/wrapper.jpg);
             background-size: 100% 100%;
             -webkit-box-shadow: -16px 43px 24px 11px rgba(255,82,164,0), inset 0px 0px 9px 1px #000000;
@@ -24,7 +25,8 @@
         }
 
         div.board {
-            margin-top: 1.5%;
+            position: relative;
+            align-self: center;
             height: 95vh;
             width: 95vw; 
             border-radius: 25px;
@@ -36,14 +38,17 @@
         div.row {
             position: relative;
             display: flex;
+            justify-content: center;
+            align-self: center;
+            top: 100%;
             background-color: #053f31a2;
             border-bottom-left-radius: 25px;
-            height: 88.4%;
+            height: 79.2vh;
             width: 50%;
         }
 
         div.menu {
-            position: relative;
+            position: absolute;
             height: 120px;
             width: 100%;
             background-color: #00a2d386;
@@ -74,42 +79,53 @@
         }
 
         div.item {
-            align-items: stretch;
-            margin-top: 60px;
-            margin-left: 55px;
-            height: 800px;
-            width: 800px;
+            display: flex;
+            position: absolute;
+            justify-content: center;
+            align-self: center;
+            height: 90%;
+            width: 90%;
             background-color: rgba(3, 219, 219, 0.24);
         }
 
         img.t-shirt {
-            align-items: stretch;
-            margin-top: 10vh;
-            margin-left: 17%;
-            height: 600px;
-            width: 500px;
+            position: relative;
+            align-self: center;
+            height: 400px;
             background-color: rgba(255, 255, 255, 0.87);
         }
 
         span.description {
-            position: absolute;
-            top: 195px;
-            right: 200px;
+            display: flex;
             display: block;
-            height: 650px;
-            width: 600px;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            right: 0px;
+            top: 100%;
+            height: 79.2vh;
+            width: 50%;
+            border-bottom-right-radius: 25px;
             background-color: rgba(10, 142, 175, 0.425);
-            text-align: center;
             font-size: 30px;
         }
 
-        button {
+        .desc {
             position: absolute;
-            left: 65%;
-            bottom: 100px;
+            display: block;
+            align-self: center;
+            text-align: center;
+            width: 80%;
+            background-color: red;
+        }
+
+        button {
+            position: relative;
+            align-self: center;
             height: 100px;
             width: 350px;
             border-radius: 50px 50px;
+            left: 64.5%;
             border: none;
             font-size: 45px;
             text-transform: uppercase;
@@ -132,20 +148,21 @@
         <div class="board">
             <div class="menu">
                 <div class="cart">
-                    <p id="number_of_items">0</p>
-                </div>
+                <p id="number_of_items">0</p>
             </div>
             <div class="row">
-            <div class="item"><img class="t-shirt" src="/images/t-shirt.png" alt="t-shirt"></div>
-        </div>
-        
+            <div class="item">
+            <img class="t-shirt" src="/images/t-shirt.png" alt="t-shirt">
+            </div>
+            </div>
+
             <span class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Sed, obcaecati? Dolor, laboriosam ipsa voluptates praesentium eius, voluptatum re
-                pellat doloribus accusamus a cum asperiores commodi explicabo alias repellendus dolores illo id.
+                <span class="desc">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Sed, obcaecati? Dolor, laboriosam ipsa voluptates praesentium eius, voluptatum re
+                    pellat doloribus accusamus a cum asperiores commodi explicabo alias repellendus dolores illo id.</span>
             </span>
             <button>kup teraz</button>
-        
     </div>
     <script>
         const btn = document.querySelector("button");
@@ -157,6 +174,7 @@
             console.log("number of items" +  " " + number_of_item++);
             if(number_of_item >= 5) {
                 oneitem.textContent = "full"
+                oneitem.style.fontSize = "55px"
             }
         })
     </script>
